@@ -1,3 +1,5 @@
+def tomcatWeb = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps'
+
 job('job-dsl-checkout') {
     
     scm {
@@ -40,7 +42,7 @@ job('job-dsl-deploy') {
     description 'Deploy app to the demo server'
     
     steps{
-             shell 'sshpass -p "123456" scp C:/Users/Harsha/AppData/Local/Jenkins/.jenkins/workspace/job-dsl-checkout/demoJenkins/target/demoJenkins-1.0.0.war release@http://localhost:9090/C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/demoJenkins.war'
+             shell 'sshpass -p "123456" scp C:/Users/Harsha/AppData/Local/Jenkins/.jenkins/workspace/job-dsl-checkout/demoJenkins/target/demoJenkins.war release@http://localhost:9090/"${tomcatWeb}\\demoJenkins.war\"'
       }
 }
 
