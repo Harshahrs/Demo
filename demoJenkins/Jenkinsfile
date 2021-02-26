@@ -40,7 +40,7 @@ job('job-dsl-deploy') {
     description 'Deploy app to the demo server'
     
     steps{
-             shell 'sshpass -p "123456" scp C:/Users/Harsha/AppData/Local/Jenkins/.jenkins/workspace/job-dsl-checkout/demoJenkins/target/demoJenkins-1.0.0.war C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/demoJenkins-1.0.0.war'
+             shell 'sshpass -p "123456" scp C:/Users/Harsha/AppData/Local/Jenkins/.jenkins/workspace/job-dsl-checkout/demoJenkins/target/demoJenkins-1.0.0.war release@http://localhost:9090/C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/demoJenkins.war'
       }
 }
 
