@@ -2,9 +2,7 @@ node{
 
    def tomcatWeb = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps'
    stage('SCM Checkout'){
-     scm{
-      github('Harshahrs/Demo/demoJenkins', 'master')
-     }
+      git 'https://github.com/Harshahrs/Demo.git/demoJenkins'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
